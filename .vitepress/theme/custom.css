@@ -188,51 +188,6 @@
   background: var(--vp-c-brand-soft);
 }
 
-/* 关键概念块 */
-.concept-box {
-  border-left: 4px solid var(--vp-c-brand-1);
-  background: var(--vp-c-bg-soft);
-  padding: 16px 20px;
-  border-radius: 0 8px 8px 0;
-  margin: 16px 0;
-}
-
-.concept-box .concept-title {
-  font-weight: 600;
-  color: var(--vp-c-brand-1);
-  margin-bottom: 8px;
-}
-
-/* 复杂度表格 */
-.complexity-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0;
-}
-
-.complexity-table th,
-.complexity-table td {
-  padding: 10px 16px;
-  border: 1px solid var(--vp-c-divider);
-  text-align: left;
-}
-
-.complexity-table th {
-  background: var(--vp-c-bg-soft);
-  font-weight: 600;
-  color: var(--vp-c-brand-1);
-}
-
-.complexity-table tr:hover {
-  background: var(--vp-c-brand-soft);
-}
-
-/* 算法分类标题 */
-h2 .anchor,
-h3 .anchor {
-  color: var(--vp-c-brand-1);
-}
-
 /* 代码高亮 */
 .vp-doc [class*='language-'] {
   border-radius: 10px;

@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/leetcode-guide/',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['meta', { name: 'theme-color', content: '#FFA116' }],
     ['meta', { name: 'keywords', content: 'LeetCode,算法,数据结构,面试,编程,刷题指南' }],
   ],
