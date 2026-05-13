@@ -53,13 +53,7 @@
   opacity: 0.85;
 }
 
-/* 特性卡片 */
-.VPHomeFeatures .items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
-}
-
+/* 特性卡片 - 仅添加视觉增强，保留 VitePress 原生flex三列布局 */
 .VPHomeFeatures .items .item {
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -73,13 +67,10 @@
 .VPHomeFeatures .items .item .title {
   color: var(--vp-c-brand-1);
   font-weight: 600;
-  word-break: keep-all;
-  overflow-wrap: break-word;
 }
 
 .VPHomeFeatures .items .item .details {
   word-break: keep-all;
-  overflow-wrap: break-word;
 }
 
 /* 难度标签 */
