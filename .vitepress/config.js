@@ -5,6 +5,7 @@ export default defineConfig({
   description: '系统化学习数据结构与算法，深入理解LeetCode经典题目',
   lang: 'zh-CN',
   lastUpdated: true,
+  base: '/leetcode-guide/',
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -276,7 +277,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-username/leetcode-guide' },
+      { icon: 'github', link: 'https://github.com/Cheung-Ka-Lok-Danny/leetcode-guide' },
     ],
 
     footer: {
@@ -285,7 +286,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/your-username/leetcode-guide/edit/main/:path',
+      pattern: 'https://github.com/Cheung-Ka-Lok-Danny/leetcode-guide/edit/main/:path',
       text: '在 GitHub 上编辑此页',
     },
 
