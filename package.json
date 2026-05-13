@@ -1,0 +1,18 @@
+{
+  "name": "leetcode-guide",
+  "version": "1.0.0",
+  "description": "LeetCode算法题指南 - 系统化学习数据结构与算法",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

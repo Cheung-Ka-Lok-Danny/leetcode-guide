@@ -1,0 +1,256 @@
+/* LeetCode 算法题指南 - 自定义主题样式 */
+/* 主色：LeetCode 橙色 #FFA116 */
+
+:root {
+  --vp-c-brand-1: #FFA116;
+  --vp-c-brand-2: #FF8C00;
+  --vp-c-brand-3: #E67E00;
+  --vp-c-brand-soft: rgba(255, 161, 22, 0.14);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #FFA116 0%, #FF6B35 100%);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #FFA116 0%, #FF6B35 50%, #FF4500 100%);
+  --vp-home-hero-image-filter: blur(80px);
+
+  --vp-button-brand-bg: #FFA116;
+  --vp-button-brand-border: #FFA116;
+  --vp-button-brand-hover-bg: #FF8C00;
+  --vp-button-brand-hover-border: #FF8C00;
+  --vp-button-brand-active-bg: #E67E00;
+
+  --vp-custom-block-tip-border: #FFA116;
+  --vp-custom-block-tip-text: #FF8C00;
+  --vp-custom-block-tip-bg: rgba(255, 161, 22, 0.08);
+
+  --vp-code-color: #d63384;
+  --vp-code-line-highlight-color: rgba(255, 161, 22, 0.12);
+}
+
+.dark {
+  --vp-c-brand-1: #FFB84D;
+  --vp-c-brand-2: #FFA116;
+  --vp-c-brand-3: #FF8C00;
+  --vp-c-brand-soft: rgba(255, 161, 22, 0.16);
+
+  --vp-c-bg: #1a1a2e;
+  --vp-c-bg-alt: #16213e;
+  --vp-c-bg-elv: #1a1a2e;
+  --vp-c-bg-soft: #16213e;
+
+  --vp-custom-block-tip-bg: rgba(255, 161, 22, 0.10);
+}
+
+/* 首页英雄区域增强 */
+.VPHomeHero .name {
+  font-size: 56px !important;
+  line-height: 1.2 !important;
+}
+
+.VPHomeHero .tagline {
+  font-size: 22px !important;
+  opacity: 0.85;
+}
+
+/* 特性卡片 */
+.VPHomeFeatures .items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.VPHomeFeatures .items .item {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.VPHomeFeatures .items .item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 161, 22, 0.15);
+}
+
+.VPHomeFeatures .items .item .title {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* 难度标签 */
+.difficulty-easy {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(0, 184, 128, 0.12);
+  color: #00b880;
+}
+
+.difficulty-medium {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(255, 161, 22, 0.12);
+  color: #FFA116;
+}
+
+.difficulty-hard {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(239, 71, 67, 0.12);
+  color: #ef4743;
+}
+
+/* 题目卡片 */
+.problem-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 12px 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--vp-c-bg-soft);
+}
+
+.problem-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 2px 12px rgba(255, 161, 22, 0.1);
+}
+
+.problem-card .problem-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.problem-card .problem-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.problem-card .problem-title a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.problem-card .problem-title a:hover {
+  text-decoration: underline;
+}
+
+.problem-card .problem-number {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+}
+
+.problem-card .problem-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.problem-card .problem-tags .tag {
+  padding: 1px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-2);
+}
+
+/* 子主题导航 */
+.subtopic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.subtopic-nav a {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: var(--vp-c-bg-soft);
+}
+
+.subtopic-nav a:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+/* 关键概念块 */
+.concept-box {
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+}
+
+.concept-box .concept-title {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 8px;
+}
+
+/* 复杂度表格 */
+.complexity-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.complexity-table th,
+.complexity-table td {
+  padding: 10px 16px;
+  border: 1px solid var(--vp-c-divider);
+  text-align: left;
+}
+
+.complexity-table th {
+  background: var(--vp-c-bg-soft);
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+.complexity-table tr:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+/* 算法分类标题 */
+h2 .anchor,
+h3 .anchor {
+  color: var(--vp-c-brand-1);
+}
+
+/* 代码高亮 */
+.vp-doc [class*='language-'] {
+  border-radius: 10px;
+  margin: 16px 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .VPHomeHero .name {
+    font-size: 32px !important;
+  }
+
+  .VPHomeHero .tagline {
+    font-size: 16px !important;
+  }
+
+  .subtopic-nav a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
