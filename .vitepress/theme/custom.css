@@ -1,211 +1,481 @@
-/* LeetCode 算法题指南 - 自定义主题样式 */
-/* 主色：LeetCode 橙色 #FFA116 */
+/* ==============================================================
+   LeetCode 算法题指南 — 莫兰迪 · 玻璃态 · 未来极简
+   配色：Monochromatic Morandi (哑光青灰)
+   风格：Card-based + Glassmorphism + Layered depth
+   哲学：Approachable Luxury（平易近人的奢华感）
+   ============================================================== */
 
+/* ---------- 莫兰迪单色色板 ---------- */
 :root {
-  --vp-c-brand-1: #FFA116;
-  --vp-c-brand-2: #FF8C00;
-  --vp-c-brand-3: #E67E00;
-  --vp-c-brand-soft: rgba(255, 161, 22, 0.14);
+  /* 品牌色 — 哑光青灰 (Muted Teal Slate) */
+  --lc-brand:          #7A9AA5;
+  --lc-brand-light:    #8AA8B5;
+  --lc-brand-lighter:  #9AB8C5;
+  --lc-brand-deep:     #5A7A85;
+  --lc-brand-soft:     rgba(122, 154, 165, 0.12);
 
+  /* 质感背景 */
+  --lc-bg-warm:        #F5F0EB;
+  --lc-glass-bg:       rgba(255, 255, 255, 0.55);
+  --lc-glass-border:   rgba(122, 154, 165, 0.15);
+  --lc-glass-shadow:   rgba(122, 154, 165, 0.06);
+
+  /* 文字 */
+  --lc-text-primary:   #2C2825;
+  --lc-text-secondary: #8A8580;
+  --lc-text-tertiary:  #B0AAA5;
+
+  /* 点缀 */
+  --lc-accent-rose:    #C9B8B0;
+  --lc-accent-gold:    #C8B8A8;
+
+  /* 覆盖 VitePress 变量 */
+  --vp-c-brand-1:        var(--lc-brand);
+  --vp-c-brand-2:        var(--lc-brand-light);
+  --vp-c-brand-3:        var(--lc-brand-deep);
+  --vp-c-brand-soft:     var(--lc-brand-soft);
+  --vp-c-bg:             var(--lc-bg-warm);
+  --vp-c-bg-alt:         #EDE8E0;
+  --vp-c-bg-elv:         #F0EBE5;
+  --vp-c-bg-soft:        rgba(255, 255, 255, 0.7);
+  --vp-c-text-1:         var(--lc-text-primary);
+  --vp-c-text-2:         var(--lc-text-secondary);
+  --vp-c-text-3:         var(--lc-text-tertiary);
+  --vp-c-divider:        var(--lc-glass-border);
+  --vp-c-border:         var(--lc-glass-border);
+  --vp-c-gutter:         rgba(122, 154, 165, 0.08);
+  --vp-c-mute:           rgba(122, 154, 165, 0.05);
+  --vp-c-mute-hover:     rgba(122, 154, 165, 0.10);
+  --vp-c-default-soft:   rgba(122, 154, 165, 0.08);
+
+  /* Hero */
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(135deg, #FFA116 0%, #FF6B35 100%);
-  --vp-home-hero-image-background-image: linear-gradient(135deg, #FFA116 0%, #FF6B35 50%, #FF4500 100%);
+  --vp-home-hero-name-background: linear-gradient(135deg, #7A9AA5 0%, #9AB8C5 50%, #B8C8C5 100%);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(122,154,165,0.25) 0%, rgba(154,184,197,0.15) 50%, rgba(200,184,176,0.20) 100%);
   --vp-home-hero-image-filter: blur(80px);
 
-  --vp-button-brand-bg: #FFA116;
-  --vp-button-brand-border: #FFA116;
-  --vp-button-brand-hover-bg: #FF8C00;
-  --vp-button-brand-hover-border: #FF8C00;
-  --vp-button-brand-active-bg: #E67E00;
+  /* 按钮 */
+  --vp-button-brand-bg:         var(--lc-brand);
+  --vp-button-brand-border:     var(--lc-brand);
+  --vp-button-brand-hover-bg:   var(--lc-brand-deep);
+  --vp-button-brand-hover-border: var(--lc-brand-deep);
+  --vp-button-brand-active-bg:  #4A6A75;
+  --vp-button-alt-bg:           rgba(255, 255, 255, 0.6);
+  --vp-button-alt-border:       var(--lc-glass-border);
+  --vp-button-alt-hover-bg:     rgba(255, 255, 255, 0.85);
+  --vp-button-alt-hover-border: var(--lc-brand);
 
-  --vp-custom-block-tip-border: #FFA116;
-  --vp-custom-block-tip-text: #FF8C00;
-  --vp-custom-block-tip-bg: rgba(255, 161, 22, 0.08);
+  /* 代码块 */
+  --vp-code-color:              #7A6A80;
+  --vp-code-line-highlight-color: rgba(122, 154, 165, 0.08);
+  --vp-code-block-bg:           rgba(255, 255, 255, 0.5);
 
-  --vp-code-color: #d63384;
-  --vp-code-line-highlight-color: rgba(255, 161, 22, 0.12);
+  /* 提示框 */
+  --vp-custom-block-tip-border: var(--lc-brand);
+  --vp-custom-block-tip-text:   var(--lc-brand);
+  --vp-custom-block-tip-bg:     rgba(122, 154, 165, 0.06);
+
+  /* 搜索框 */
+  --vp-input-bg-color:          rgba(255, 255, 255, 0.6);
+  --vp-input-border-color:      var(--lc-glass-border);
+  --vp-input-hover-border-color: var(--lc-brand);
 }
 
+/* ---------- 暗色模式 ---------- */
 .dark {
-  --vp-c-brand-1: #FFB84D;
-  --vp-c-brand-2: #FFA116;
-  --vp-c-brand-3: #FF8C00;
-  --vp-c-brand-soft: rgba(255, 161, 22, 0.16);
+  --lc-brand:          #9AB8C5;
+  --lc-brand-light:    #AAC8D5;
+  --lc-brand-lighter:  #BAD8E5;
+  --lc-brand-deep:     #7A9AA5;
+  --lc-brand-soft:     rgba(154, 184, 197, 0.12);
 
-  --vp-c-bg: #1a1a2e;
-  --vp-c-bg-alt: #16213e;
-  --vp-c-bg-elv: #1a1a2e;
-  --vp-c-bg-soft: #16213e;
-  --vp-c-text-1: #e8e8ea;
-  --vp-c-text-2: #a0a0b0;
+  --lc-bg-warm:        #1A1815;
+  --lc-glass-bg:       rgba(35, 32, 28, 0.55);
+  --lc-glass-border:   rgba(154, 184, 197, 0.10);
+  --lc-glass-shadow:   rgba(0, 0, 0, 0.2);
 
-  --vp-custom-block-tip-bg: rgba(255, 161, 22, 0.10);
+  --lc-text-primary:   #E8E0D8;
+  --lc-text-secondary: #A09890;
+  --lc-text-tertiary:  #706860;
+
+  --lc-accent-rose:    #B8A898;
+  --lc-accent-gold:    #A89888;
+
+  --vp-c-brand-1:        var(--lc-brand);
+  --vp-c-brand-2:        var(--lc-brand-light);
+  --vp-c-brand-3:        var(--lc-brand-deep);
+  --vp-c-brand-soft:     var(--lc-brand-soft);
+  --vp-c-bg:             var(--lc-bg-warm);
+  --vp-c-bg-alt:         #22201C;
+  --vp-c-bg-elv:         #282520;
+  --vp-c-bg-soft:        rgba(40, 37, 32, 0.7);
+  --vp-c-text-1:         var(--lc-text-primary);
+  --vp-c-text-2:         var(--lc-text-secondary);
+  --vp-c-text-3:         var(--lc-text-tertiary);
+  --vp-c-divider:        var(--lc-glass-border);
+  --vp-c-border:         var(--lc-glass-border);
+  --vp-c-gutter:         rgba(154, 184, 197, 0.06);
+  --vp-c-mute:           rgba(154, 184, 197, 0.04);
+  --vp-c-mute-hover:     rgba(154, 184, 197, 0.08);
+  --vp-c-default-soft:   rgba(154, 184, 197, 0.06);
+
+  --vp-home-hero-name-background: linear-gradient(135deg, #9AB8C5 0%, #7A9AA5 50%, #B8A898 100%);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(154,184,197,0.20) 0%, rgba(122,154,165,0.15) 50%, rgba(184,168,152,0.15) 100%);
+
+  --vp-button-brand-bg:         var(--lc-brand);
+  --vp-button-brand-border:     var(--lc-brand);
+  --vp-button-brand-hover-bg:   var(--lc-brand-light);
+  --vp-button-brand-hover-border: var(--lc-brand-light);
+  --vp-button-alt-bg:           rgba(40, 37, 32, 0.6);
+  --vp-button-alt-border:       var(--lc-glass-border);
+  --vp-button-alt-hover-bg:     rgba(50, 47, 42, 0.85);
+  --vp-button-alt-hover-border: var(--lc-brand);
+
+  --vp-code-color:              #A09098;
+  --vp-code-line-highlight-color: rgba(154, 184, 197, 0.06);
+  --vp-code-block-bg:           rgba(30, 28, 24, 0.6);
+
+  --vp-custom-block-tip-border: var(--lc-brand);
+  --vp-custom-block-tip-text:   var(--lc-brand);
+  --vp-custom-block-tip-bg:     rgba(154, 184, 197, 0.06);
+
+  --vp-input-bg-color:          rgba(40, 37, 32, 0.6);
+  --vp-input-border-color:      var(--lc-glass-border);
+  --vp-input-hover-border-color: var(--lc-brand);
 }
 
-/* 首页英雄区域增强 */
-.VPHomeHero .name {
-  font-size: 56px !important;
-  line-height: 1.2 !important;
+/* ========== 玻璃态全局效果 ========== */
+
+/* 导航栏玻璃 */
+.VPNavBar {
+  background-color: transparent !important;
+}
+.VPNavBar:not(.home) {
+  background-color: transparent !important;
+}
+.VPNavBar .content-body {
+  background: var(--lc-glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--lc-glass-border);
+}
+.dark .VPNavBar .content-body {
+  background: var(--lc-glass-bg) !important;
 }
 
-.VPHomeHero .tagline {
-  font-size: 22px !important;
-  opacity: 0.85;
+/* 侧边栏玻璃 */
+.VPSidebar {
+  background: var(--lc-glass-bg) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-right: 1px solid var(--lc-glass-border) !important;
 }
 
-/* 特性卡片 - 仅添加视觉增强，保留 VitePress 原生flex三列布局 */
+/* 卡片通用玻璃效果 */
+.VPFeature,
+.problem-card,
+.content .vp-doc .custom-block,
+.VPTeamMembers .item .profile {
+  background: var(--lc-glass-bg) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--lc-glass-border) !important;
+  box-shadow: 0 4px 24px var(--lc-glass-shadow);
+}
+
+/* 首页特性卡片 */
 .VPHomeFeatures .items .item {
-  border-radius: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-
 .VPHomeFeatures .items .item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(255, 161, 22, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(122, 154, 165, 0.12);
 }
-
+.dark .VPHomeFeatures .items .item:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
 .VPHomeFeatures .items .item .title {
-  color: var(--vp-c-brand-1);
+  color: var(--lc-brand);
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
-
 .VPHomeFeatures .items .item .details {
   word-break: keep-all;
 }
 
-/* 难度标签 */
+/* ========== Hero 区域增强 ========== */
+.VPHomeHero {
+  padding-top: 48px !important;
+}
+.VPHomeHero .name {
+  font-size: 56px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.VPHomeHero .tagline {
+  font-size: 20px !important;
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  color: var(--lc-text-secondary);
+}
+.VPHomeHero .image-bg {
+  transition: all 0.6s ease;
+}
+.VPHomeHero:hover .image-bg {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/* ========== 题目标签 ========== */
 .difficulty-easy {
   display: inline-block;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 13px;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 600;
-  background: rgba(0, 184, 128, 0.12);
-  color: #00b880;
+  letter-spacing: 0.03em;
+  background: rgba(122, 180, 140, 0.12);
+  color: #5A9A7A;
+  border: 1px solid rgba(122, 180, 140, 0.2);
 }
-
 .difficulty-medium {
   display: inline-block;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 13px;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 600;
-  background: rgba(255, 161, 22, 0.12);
-  color: #FFA116;
+  letter-spacing: 0.03em;
+  background: rgba(180, 170, 130, 0.12);
+  color: #B0A060;
+  border: 1px solid rgba(180, 170, 130, 0.2);
 }
-
 .difficulty-hard {
   display: inline-block;
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 13px;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 600;
-  background: rgba(239, 71, 67, 0.12);
-  color: #ef4743;
+  letter-spacing: 0.03em;
+  background: rgba(200, 140, 130, 0.12);
+  color: #C08070;
+  border: 1px solid rgba(200, 140, 130, 0.2);
 }
 
-/* 题目卡片 */
+/* ========== 题目卡片 (Problem Card) ========== */
 .problem-card {
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin: 12px 0;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background: var(--vp-c-bg-soft);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: relative;
+  overflow: hidden;
 }
-
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--lc-brand), var(--lc-brand-light));
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+.problem-card:hover::before {
+  opacity: 0.8;
+}
 .problem-card:hover {
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 2px 12px rgba(255, 161, 22, 0.1);
+  transform: translateY(-3px);
+  border-color: var(--lc-brand) !important;
+  box-shadow: 0 8px 32px rgba(122, 154, 165, 0.10);
 }
-
+.dark .problem-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
 .problem-card .problem-header {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
 }
-
 .problem-card .problem-title {
   font-size: 16px;
   font-weight: 600;
-  color: var(--vp-c-text-1);
+  color: var(--lc-text-primary);
 }
-
 .problem-card .problem-title a {
-  color: var(--vp-c-brand-1);
+  color: var(--lc-brand);
   text-decoration: none;
+  transition: color 0.2s;
 }
-
 .problem-card .problem-title a:hover {
+  color: var(--lc-brand-deep);
   text-decoration: underline;
 }
-
 .problem-card .problem-number {
   font-size: 13px;
-  color: var(--vp-c-text-2);
+  color: var(--lc-text-tertiary);
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
-
 .problem-card .problem-tags {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 10px;
 }
-
 .problem-card .problem-tags .tag {
-  padding: 1px 8px;
+  padding: 2px 10px;
   border-radius: 6px;
   font-size: 12px;
-  background: var(--vp-c-bg-mute);
-  color: var(--vp-c-text-2);
+  background: rgba(122, 154, 165, 0.06);
+  color: var(--lc-text-secondary);
+  border: 1px solid rgba(122, 154, 165, 0.08);
 }
 
-/* 子主题导航 */
+/* ========== 子主题导航 ========== */
 .subtopic-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 20px 0;
+  margin: 24px 0;
 }
-
 .subtopic-nav a {
-  padding: 8px 18px;
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-1);
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--lc-glass-border);
+  color: var(--lc-text-primary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.2s;
-  background: var(--vp-c-bg-soft);
+  transition: all 0.25s ease;
+  background: var(--lc-glass-bg);
+  backdrop-filter: blur(8px);
 }
-
 .subtopic-nav a:hover {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-  background: var(--vp-c-brand-soft);
+  border-color: var(--lc-brand);
+  color: var(--lc-brand);
+  background: rgba(122, 154, 165, 0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--lc-glass-shadow);
 }
 
-/* 代码高亮 */
+/* ========== 内容排版增强 ========== */
+.vp-doc h2 {
+  border-top: none;
+  padding-top: 32px;
+  margin-top: 40px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+.vp-doc h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+.vp-doc h3 {
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+.vp-doc p {
+  line-height: 1.8;
+}
+.vp-doc a {
+  transition: color 0.2s;
+}
+.vp-doc strong {
+  font-weight: 600;
+  color: var(--lc-brand);
+}
+
+/* ========== 代码块 ========== */
 .vp-doc [class*='language-'] {
-  border-radius: 10px;
-  margin: 16px 0;
+  border-radius: 12px;
+  margin: 20px 0;
+  background: var(--vp-code-block-bg) !important;
+  border: 1px solid var(--lc-glass-border);
+  backdrop-filter: blur(8px);
+}
+.vp-doc [class*='language-'] code {
+  font-size: 13.5px;
+  line-height: 1.7;
 }
 
-/* 响应式调整 */
+/* ========== 表格 ========== */
+.vp-doc table {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--lc-glass-border);
+}
+.vp-doc th {
+  background: rgba(122, 154, 165, 0.06);
+  font-weight: 600;
+  color: var(--lc-brand);
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+.vp-doc td, .vp-doc th {
+  padding: 12px 16px;
+  border-color: var(--lc-glass-border);
+}
+
+/* ========== 提示块 ========== */
+.custom-block.tip {
+  border-radius: 12px;
+  border: 1px solid var(--lc-glass-border) !important;
+  background: var(--lc-glass-bg) !important;
+  backdrop-filter: blur(8px);
+}
+.custom-block.tip .custom-block-title {
+  color: var(--lc-brand);
+}
+
+/* ========== 页脚 ========== */
+.VPFooter {
+  border-top: 1px solid var(--lc-glass-border);
+  background: var(--lc-glass-bg);
+  backdrop-filter: blur(8px);
+}
+
+/* ========== 滚动条美化 ========== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 154, 165, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 154, 165, 0.35);
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 960px) {
+  .VPNavBar .content-body {
+    backdrop-filter: blur(12px);
+  }
+}
+
 @media (max-width: 640px) {
   .VPHomeHero .name {
     font-size: 32px !important;
   }
-
   .VPHomeHero .tagline {
     font-size: 16px !important;
   }
-
   .subtopic-nav a {
-    padding: 6px 12px;
+    padding: 8px 14px;
     font-size: 13px;
+  }
+  .problem-card {
+    padding: 16px;
   }
 }
